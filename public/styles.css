@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+/* dark mode by using class */
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+/* dark mode by using attribute */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+    --color-rua-gray-100: #aabfc5;
+    --color-rua-gray-600: rgb(66, 66, 66);
+    --color-rua-gray-700: hsl(220, 13%, 18%);
+    --color-rua-gray-800: rgb(35, 38, 38);
+    --color-rua-gray-900: #181e24;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}

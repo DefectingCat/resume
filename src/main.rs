@@ -3,6 +3,9 @@ mod app;
 use app::*;
 use leptos::{logging, mount};
 
+mod consts;
+mod pages;
+
 pub fn main() {
     console_error_panic_hook::set_once();
     logging::log!("csr mode - mounting to body");
