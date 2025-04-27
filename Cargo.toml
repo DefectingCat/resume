@@ -1,0 +1,28 @@
+cargo-features = ["profile-rustflags", "trim-paths"]
+
+[package]
+name = "resume"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+leptos = { version = "0.7.8", features = ["csr", "nightly"] }
+leptos_meta = { version = "0.7.8" }
+leptos_router = { version = "0.7.8", features = ["nightly"] }
+leptos-use = "0.15.6"
+console_log = "1"
+log = "0.4.25"
+console_error_panic_hook = "0.1"
+
+[profile.dev]
+incremental = true          # Compile your binary in smaller steps.
+rustflags = ["-Zthreads=8"] # Better compile performance.
+
+[profile.release]
+codegen-units = 1                                # Allows LLVM to perform better optimization.
+lto = true                                       # Enables link-time-optimizations.
+panic = "abort"                                  # Higher performance by disabling panic handlers.
+strip = true                                     # Ensures debug symbols are removed.
+trim-paths = "all"                               # Removes potentially privileged information from your binaries.
+opt-level = "s"
+rustflags = ["-Cdebuginfo=0", "-Z", "threads=8"]
