@@ -11,6 +11,9 @@
     --color-card-100: rgb(247, 248, 250); /* light bg */
     --color-card-200: rgba(51, 71, 124, 0.1); /* light button bg */
     --color-card-300: #33477c; /* ligt text color */
+    /* common colors for text */
+    --color-word-100: rgb(85, 85, 85); /* light main text */
+    --color-word-200: #333; /* light secondary text */
     /* common colors */
     --color-rua-gray-100: #aabfc5;
     --color-rua-gray-600: rgb(66, 66, 66);
