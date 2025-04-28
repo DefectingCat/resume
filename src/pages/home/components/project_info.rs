@@ -1,12 +1,16 @@
 use leptos::prelude::*;
 
-use crate::components::title::Title;
+use crate::{
+    components::{tag::Tag, title::Title},
+    pages::home::components::project_card::ProjectCard,
+};
 
 /// Project information in right
 #[component]
 pub fn ProjectInfo() -> impl IntoView {
     view! {
         <div class="flex flex-col items-center text-card-300">
+            // button title
             <div class="flex justify-center items-center w-full">
                 <div class="h-[2px] bg-hr-100 flex-[1.1]"></div>
                 <div class="flex-1 mx-4">
@@ -28,6 +32,41 @@ pub fn ProjectInfo() -> impl IntoView {
                     "工作内容：参与公司主要产品的模块开发，主导 B 端供应链系统的前端开发工作。同时负责公司内部的基础桌面运维。"
                 </div>
             </div>
+
+            // button title
+            <div class="flex justify-center items-center w-full">
+                <div class="h-[2px] bg-hr-100 flex-[1.1]"></div>
+                <div class="flex-1 mx-4">
+                    <Title>项目经验</Title>
+                </div>
+                <div class="h-[2px] bg-hr-100 flex-[1.1]"></div>
+            </div>
+            <ProjectCard
+                project_title="视尔信息科技有限公司 - 项目"
+                project_tag="三维实时渲染平台"
+                project_stack=vec![
+                    "React",
+                    "Redux",
+                    "Three.js",
+                    "WASM",
+                    "Ant Design",
+                    "TypeScript",
+                    "Axios",
+                ]
+                project_description="使用 Three.js 技术实现的 3D 展台平台，具有多种功能，支持 3D 模型的渲染、全景图的展示模式。同时提供编辑端与展示端，用户可以在编辑端对三维场景进行编辑，并通过平台链接一键上架分享三维展台；对接微信平台，实现微信一键登录，卡片分享等功能；对接市面大模型服务，实现智能 AI 客服，在展台内通过语音、文字等方式与大模型交互，同时支持语音操作展台等功能；通过 WebSocket 技术多人联机在线浏览展台，并配合即构服务实现在线聊天、音视频通话功能。"
+                project_duty="主要开发人员"
+                project_duties=vec![
+                    "编辑器 UI 开发，实现与 Three.js 的交互",
+                    "通过接口联动，实现后台账号素材管理，展台的控制",
+                    "通过 React i18n 实现多语言切换，以及通过调用实时翻译接口实现动态内容翻译",
+                    "基于 html2canvas 与 canvas API 渲染图片以及保存功能",
+                    "对接微信，实现扫码关注打开展台、扫码登录、移动端微信一键登录、微信分享等功能",
+                    "使用 WASM、Web worker 等技术优化三维模型加载速度",
+                    "使用 MediaStream API 配合大模型服务器实现语音控制展台",
+                    "使用 WebSocket 配合即构服务实现的多人在线，音视频聊天",
+                    "系统日常迭代开发、维护及优化",
+                ]
+            />
         </div>
     }
 }
