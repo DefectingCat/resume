@@ -12,3 +12,8 @@ dev:
 
 release:
 	trunk build --release
+
+fix:
+	leptosfmt . \
+		&& cargo fix --allow-dirty --all-features \
+		&& cargo fmt

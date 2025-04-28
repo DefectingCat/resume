@@ -1,9 +1,6 @@
 use leptos::prelude::*;
 
-use crate::{
-    components::{tag::Tag, title::Title},
-    pages::home::components::project_card::ProjectCard,
-};
+use crate::{components::title::Title, pages::home::components::project_card::ProjectCard};
 
 /// Project information in right
 #[component]
