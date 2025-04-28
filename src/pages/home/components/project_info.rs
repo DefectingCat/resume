@@ -41,8 +41,11 @@ pub fn ProjectInfo() -> impl IntoView {
                 </div>
                 <div class="h-[2px] bg-hr-100 flex-[1.1]"></div>
             </div>
+            <div class="w-full flex justify-center mb-2 font-semibold text-word-100">
+                视尔信息科技有限公司 - 项目
+            </div>
             <ProjectCard
-                project_title="视尔信息科技有限公司 - 项目"
+                project_title="云汇展平台"
                 project_tag="三维实时渲染平台"
                 project_stack=vec![
                     "React",
@@ -65,6 +68,45 @@ pub fn ProjectInfo() -> impl IntoView {
                     "使用 MediaStream API 配合大模型服务器实现语音控制展台",
                     "使用 WebSocket 配合即构服务实现的多人在线，音视频聊天",
                     "系统日常迭代开发、维护及优化",
+                ]
+            />
+            <ProjectCard
+                project_title="Gorra"
+                project_tag="实时在线后端"
+                project_stack=vec!["Golang", "WebSocket", "gorilla/websocket", "net/http", "Docker"]
+                project_description="通过 Golang 的 net/http 实现的 RESTful API 服务，以及 gorilla/websocket 实现的多人实时在线功能；通过对 WebSocket 消息的封装，实现在同一个展台中对不同账号实现权限控制，实现主持人以及参会人员角色；通过与即构服务的对接，实现在三维场景中的实时投屏，视频串流等功能。基于 WebSocket 实现的文字聊天服务，用于在云汇展平台的大模型聊天中；"
+                project_duty="独立开发"
+                project_duties=vec![
+                    "net/http 实现的 RESTful API 服务",
+                    "gorilla/websocket 实现的多人实时在线功能",
+                    "对接平台已有数据库，实现用户账号权限控制，会议控制等功能",
+                    "基于 WebSocket 实现的文字聊天服务",
+                    "负责线上的部署，版本的迭代管理",
+                    "系统日常迭代开发、维护及优化",
+                ]
+            />
+            <ProjectCard
+                project_title="Ant Encrypt"
+                project_tag="多端加密工具"
+                project_stack=vec!["Rust", "WASM", "Trunk", "CLI", "Linux", "Windows"]
+                project_description="使用 Rust 实现的加密工具，通过 WASM 技术实现在云汇展等平台中的对接，实现在浏览器中实时的加解密数据；通过静态链接的方式实现 CLI 工具，对接后端在 Linux 服务器上的实时加解密功能；通过 Trunk 构建 WASM 到私有 NPM 源，实现前端工具链可以无缝接入。"
+                project_duty="独立开发"
+                project_duties=vec![
+                    "Rust 实现对字节的加密和解密",
+                    "WASM 实现对浏览器中的加解密",
+                    "CLI 实现对 Linux 服务器上的加解密",
+                    "Trunk 构建 WASM 到私有 NPM 源",
+                ]
+            />
+            <ProjectCard
+                project_title="Three Library"
+                project_tag="三维渲染库"
+                project_stack=vec!["Three.js", "WASM", "TypeScript", "Web Worker"]
+                project_description="通过对 Three.js 的封装，实现对云汇展等平台的三维渲染提供驱动。"
+                project_duty="开发人员"
+                project_duties=vec![
+                    "优化项目的构建，实现部署到私有 NPM 源",
+                    "通过 WASM、Web worker 等技术优化三维模型加载速度",
                 ]
             />
         </div>

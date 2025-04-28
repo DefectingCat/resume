@@ -14,11 +14,8 @@ pub fn ProjectCard(
 ) -> impl IntoView {
     view! {
         <div class="w-full mb-4 text-sm">
-            <div class="w-full flex justify-center mb-2 font-semibold text-word-100">
-                {project_title}
-            </div>
             <div class="mb-2 flex justify-between items-center font-semibold">
-                <div class="text-2xl">云汇展平台</div>
+                <div class="text-2xl">{project_title}</div>
                 <div class="rounded-full px-4 py-1 bg-[#cfffd9]">{project_tag}</div>
             </div>
             <div class="mb-2">
