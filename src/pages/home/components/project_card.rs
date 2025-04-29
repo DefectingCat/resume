@@ -16,7 +16,9 @@ pub fn ProjectCard(
         <div class="w-full mb-4 text-sm">
             <div class="mb-2 flex justify-between items-center font-semibold">
                 <div class="text-2xl">{project_title}</div>
-                <div class="rounded-full px-4 py-1 bg-[#cfffd9]">{project_tag}</div>
+                <div class="rounded-full px-4 py-1 bg-[#cfffd9] dark:bg-[#888eb3]">
+                    {project_tag}
+                </div>
             </div>
             <div class="mb-2">
                 <span class="font-semibold">"主要技术栈："</span>

@@ -6,11 +6,11 @@ use crate::components::title::Title;
 #[component]
 pub fn PersonInfo() -> impl IntoView {
     view! {
-        <div class="flex flex-col items-center text-card-300">
+        <div class="flex flex-col items-center text-word-100 dark:text-word-300">
             <h1 class="text-3xl mb-2 font-semibold">李林军</h1>
             <div class="mb-1">全栈开发工程师</div>
             <div class="mb-2 text-sm">男 / 2000.02</div>
-            <div class="flex rounded-full font-semibold text-word-200 bg-card-200 px-2 w-max">
+            <div class="flex rounded-full font-semibold text-word-200 dark:text-word-400 bg-card-200 px-2 w-max">
                 3 年工作经验
             </div>
             // contact
@@ -38,14 +38,14 @@ pub fn PersonInfo() -> impl IntoView {
             </div>
 
             <Title>教育背景</Title>
-            <div class="flex flex-col items-center text-sm text-word-200">
+            <div class="flex flex-col items-center text-sm text-word-200 dark:text-word-400">
                 <div class="mb-1">安徽新华学院</div>
                 <div class="mb-1">2017.03 - 2019.07</div>
                 <div>计算机网络-专科</div>
             </div>
 
             <Title>技能水平</Title>
-            <div class="flex flex-col items-center text-sm text-word-100 text-sm px-4">
+            <div class="flex flex-col items-center text-sm text-sm px-4">
                 <ul>
                     <li class="mb-2">
                         "扎实的 JavaScript/TypeScript 基础，了解 ES6+ 新特性"
@@ -73,7 +73,7 @@ pub fn PersonInfo() -> impl IntoView {
             </div>
 
             <Title>个人评价</Title>
-            <div class="flex flex-col items-center text-sm text-word-100 text-sm px-4">
+            <div class="flex flex-col items-center text-sm text-sm px-4">
                 <ul>
                     <li class="mb-2">
                         "拥有良好的代码编写习惯，对代码质量有自我约束。"
