@@ -18,6 +18,7 @@ pub fn DarkMode() -> impl IntoView {
                 <button
                     type="button"
                     class="inline-flex w-full justify-center gap-x-1.5 rounded-md dark:bg-rua-gray-800 dark:text-word-300 dark:ring-gray-600 dark:hover:bg-rua-gray-700 transition-all bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50 cursor-pointer"
+                    on:click=move |_| set_show(!show.get())
                     id="menu-button"
                     aria-expanded="true"
                     aria-haspopup="true"
@@ -40,7 +41,9 @@ pub fn DarkMode() -> impl IntoView {
             </div>
 
             <div
-                class="absolute right-0 z-10 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden dark:bg-rua-gray-800 dark:text-word-300 dark:ring-gray-600"
+                class="absolute right-0 z-10 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden dark:bg-rua-gray-800 dark:text-word-300 dark:ring-gray-600 transition ease-out duration-100"
+                class=(["transform", "opacity-0", "scale-95"], move || !show.get())
+                class=(["transform", "opacity-100", "scale-100"], move || show.get())
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="menu-button"
@@ -50,7 +53,15 @@ pub fn DarkMode() -> impl IntoView {
                     <a
                         href="#"
                         class="block px-4 py-2 text-sm text-gray-700 dark:text-word-300 dark:hover:text-word-400 dark:hover:bg-rua-gray-700 no-underline! hover:bg-gray-100 hover:text-gray-900 hover:outline-hidden transition-all"
-                        class=(["bg-gray-100", "text-gray-900", "outline-hidden", "dark:bg-rua-gray-700"], move || mode.get() == ColorMode::Auto)
+                        class=(
+                            [
+                                "bg-gray-100",
+                                "text-gray-900",
+                                "outline-hidden",
+                                "dark:bg-rua-gray-700",
+                            ],
+                            move || mode.get() == ColorMode::Auto,
+                        )
                         role="menuitem"
                         on:click=move |_| set_mode(ColorMode::Auto)
                         tabindex="-1"
@@ -61,7 +72,15 @@ pub fn DarkMode() -> impl IntoView {
                     <a
                         href="#"
                         class="block px-4 py-2 text-sm text-gray-700 dark:text-word-300 dark:hover:text-word-400 dark:hover:bg-rua-gray-700 no-underline! hover:bg-gray-100 hover:text-gray-900 hover:outline-hidden transition-all"
-                        class=(["bg-gray-100", "text-gray-900", "outline-hidden", "dark:bg-rua-gray-700"], move || mode.get() == ColorMode::Dark)
+                        class=(
+                            [
+                                "bg-gray-100",
+                                "text-gray-900",
+                                "outline-hidden",
+                                "dark:bg-rua-gray-700",
+                            ],
+                            move || mode.get() == ColorMode::Dark,
+                        )
                         on:click=move |_| set_mode(ColorMode::Dark)
                         role="menuitem"
                         tabindex="-1"
@@ -72,7 +91,15 @@ pub fn DarkMode() -> impl IntoView {
                     <a
                         href="#"
                         class="block px-4 py-2 text-sm text-gray-700 dark:text-word-300 dark:hover:text-word-400 dark:hover:bg-rua-gray-700 no-underline! hover:bg-gray-100 hover:text-gray-900 hover:outline-hidden transition-all"
-                        class=(["bg-gray-100", "text-gray-900", "outline-hidden", "dark:bg-rua-gray-700"], move || mode.get() == ColorMode::Light)
+                        class=(
+                            [
+                                "bg-gray-100",
+                                "text-gray-900",
+                                "outline-hidden",
+                                "dark:bg-rua-gray-700",
+                            ],
+                            move || mode.get() == ColorMode::Light,
+                        )
                         on:click=move |_| set_mode(ColorMode::Light)
                         role="menuitem"
                         tabindex="-1"
