@@ -1,4 +1,4 @@
-use leptos::{logging, prelude::*};
+use leptos::prelude::*;
 use leptos_use::ColorMode;
 
 #[component]
@@ -7,13 +7,8 @@ pub fn DarkMode() -> impl IntoView {
         .expect("cannot access color mode");
     let (show, set_show) = signal(false);
 
-    Effect::new(move |_| {
-        logging::log!("mode: {:?}, ColorMode {:?}", mode.get(), ColorMode::Auto);
-        logging::log!("mode == auto {}", mode.get() == ColorMode::Auto);
-    });
-
     view! {
-        <div class="fixed inline-block text-left left-10 top-10 z-50">
+        <div class="relative sm:fixed inline-block text-left sm:left-10 sm:top-10 z-50">
             <div>
                 <button
                     type="button"

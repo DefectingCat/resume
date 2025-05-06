@@ -8,7 +8,6 @@ pub mod components;
 pub fn Home() -> impl IntoView {
     view! {
         <Title text="RUA" />
-        <DarkMode />
         // main background
         <main class="dark:bg-rua-gray-900 dark:text-rua-gray-100 h-full flex flex-col sm:justify-center sm:flex-row sm:py-8">
             <div class="shadow-xl w-full sm:max-w-6xl flex flex-col sm:flex-row">
@@ -21,6 +20,7 @@ pub fn Home() -> impl IntoView {
                     <ProjectInfo />
                 </div>
             </div>
+            <DarkMode />
         </main>
     }
 }
