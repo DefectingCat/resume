@@ -17,3 +17,6 @@ fix:
 	leptosfmt . \
 		&& cargo fix --allow-dirty --all-features \
 		&& cargo fmt
+
+clean:
+	cargo clean && rm -rf dist

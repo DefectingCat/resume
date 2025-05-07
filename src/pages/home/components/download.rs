@@ -4,9 +4,17 @@ use crate::app::download;
 
 #[component]
 pub fn Download() -> impl IntoView {
-    fn download_img() {
-        logging::log!("{:?}", download());
+    async fn download_img() {
+        download()
+            .await
+            .map_err(|e| logging::error!("download error: {e:?}"))
+            .ok();
     }
+    let download_img_action: Action<(), (), SyncStorage> =
+        Action::new_unsync(|_: &()| async move {
+            download_img().await;
+        });
+    let download_loading = download_img_action.pending();
 
     view! {
         <button
@@ -15,7 +23,10 @@ pub fn Download() -> impl IntoView {
             id="menu-button"
             aria-expanded="true"
             aria-haspopup="true"
-            on:click=move |_| download_img()
+            on:click=move |_| {
+                download_img_action.dispatch(());
+            }
+            disabled=move || download_loading
         >
             Download
         </button>

@@ -2,13 +2,19 @@ use leptos::prelude::*;
 use leptos_use::ColorMode;
 
 #[component]
-pub fn DarkMode() -> impl IntoView {
+pub fn DarkMode(class: Option<&'static str>) -> impl IntoView {
     let (mode, set_mode) = use_context::<(Signal<ColorMode>, WriteSignal<ColorMode>)>()
         .expect("cannot access color mode");
     let (show, set_show) = signal(false);
 
     view! {
-        <div class="relative">
+        <div class=move || {
+            if let Some(class) = class {
+                format!("{class} relative" )
+            } else {
+                "relative".into()
+            }
+        }>
             <button
                 type="button"
                 class="inline-flex w-full justify-center gap-x-1.5 rounded-md dark:bg-rua-gray-800 dark:text-word-300 dark:ring-gray-600 dark:hover:bg-rua-gray-700 transition-all bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50 cursor-pointer"

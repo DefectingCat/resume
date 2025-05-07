@@ -23,7 +23,7 @@ pub fn Home() -> impl IntoView {
                 </div>
             </div>
             <div class="relative sm:fixed inline-block text-left sm:left-10 sm:top-10 z-50 sm:flex sm:item-center">
-                <DarkMode />
+                <DarkMode class=Some("sm:mr-2") />
                 <Download />
             </div>
         </main>

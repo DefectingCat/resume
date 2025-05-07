@@ -11,8 +11,8 @@ use crate::{consts::COLOR_MODE, pages::home::Home};
 
 #[wasm_bindgen(module = "/public/js/index.js")]
 extern "C" {
-    pub fn name() -> String;
-    pub fn download();
+    #[wasm_bindgen(catch)]
+    pub async fn download() -> Result<JsValue, JsValue>;
 }
 
 #[component]

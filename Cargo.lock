@@ -1472,6 +1472,7 @@ dependencies = [
  "leptos_router",
  "log",
  "wasm-bindgen",
+ "wasm-bindgen-futures",
 ]
 
 [[package]]
