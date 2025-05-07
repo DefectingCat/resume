@@ -40,6 +40,13 @@ a {
     text-decoration: underline;
 }
 
-ul {
-    list-style: circle;
+/* ul { */
+/*     list-style: disc; */
+/* } */
+ul li {
+    list-style-type: none;
+}
+ul li:before {
+    content: "- ";
+    margin-left: -1em;
 }

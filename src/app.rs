@@ -5,8 +5,15 @@ use leptos_router::{
     components::{Route, Router, Routes},
 };
 use leptos_use::{UseColorModeOptions, UseColorModeReturn, use_color_mode_with_options};
+use wasm_bindgen::prelude::*;
 
 use crate::{consts::COLOR_MODE, pages::home::Home};
+
+#[wasm_bindgen(module = "/public/js/index.js")]
+extern "C" {
+    pub fn name() -> String;
+    pub fn download();
+}
 
 #[component]
 pub fn App() -> impl IntoView {
