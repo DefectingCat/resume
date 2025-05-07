@@ -11,15 +11,13 @@ pub fn Download() -> impl IntoView {
             .ok();
     }
     let download_img_action: Action<(), (), SyncStorage> =
-        Action::new_unsync(|_: &()| async move {
-            download_img().await;
-        });
+        Action::new_unsync(|_: &()| download_img());
     let download_loading = download_img_action.pending();
 
     view! {
         <button
             type="button"
-            class="inline-flex w-full justify-center gap-x-1.5 rounded-md dark:bg-rua-gray-800 dark:text-word-300 dark:ring-gray-600 dark:hover:bg-rua-gray-700 transition-all bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50 cursor-pointer"
+            class="inline-flex w-full justify-center gap-x-1.5 rounded-md dark:bg-rua-gray-800 dark:text-word-300 dark:ring-gray-600 dark:hover:bg-rua-gray-700 transition-all bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50 cursor-pointer items-center dark:disabled:bg-gray-800 disabled:bg-gray-100 disabled:cursor-not-allowed"
             id="menu-button"
             aria-expanded="true"
             aria-haspopup="true"
@@ -29,6 +27,12 @@ pub fn Download() -> impl IntoView {
             disabled=move || download_loading
         >
             Download
+            <img
+                alt="loading"
+                src="/public/svg/loading.svg"
+                class="w-0 h-4 transition-all"
+                class=("w-4", move || download_loading.get())
+            />
         </button>
     }
 }

@@ -9,11 +9,7 @@ pub fn DarkMode(class: Option<&'static str>) -> impl IntoView {
 
     view! {
         <div class=move || {
-            if let Some(class) = class {
-                format!("{class} relative" )
-            } else {
-                "relative".into()
-            }
+            if let Some(class) = class { format!("{class} relative") } else { "relative".into() }
         }>
             <button
                 type="button"
