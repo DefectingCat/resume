@@ -45,7 +45,7 @@ pub fn PersonInfo() -> impl IntoView {
             </div>
 
             <Title>技能水平</Title>
-            <div class="flex flex-col items-center text-sm text-sm px-4">
+            <div class="flex flex-col items-center text-sm px-4">
                 <ul>
                     <li class="mb-2">
                         "扎实的 JavaScript/TypeScript 基础，了解 ES6+ 新特性"
@@ -73,7 +73,7 @@ pub fn PersonInfo() -> impl IntoView {
             </div>
 
             <Title>个人评价</Title>
-            <div class="flex flex-col items-center text-sm text-sm px-4">
+            <div class="flex flex-col items-center text-sm px-4">
                 <ul>
                     <li class="mb-2">
                         "拥有良好的代码编写习惯，对代码质量有自我约束。"

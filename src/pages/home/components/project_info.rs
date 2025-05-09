@@ -29,7 +29,7 @@ pub fn ProjectInfo() -> impl IntoView {
                 <div class="text-sm font-semibold text-word-100 dark:text-word-500 mb-2">
                     2021.04 - 2021.09
                 </div>
-                <div class="text-sm text-word-100 dark:text-word-500 dark:text-word-500">
+                <div class="text-sm text-word-100 dark:text-word-500">
                     "工作内容：参与公司主要产品的模块开发，主导 B 端供应链系统的前端开发工作。同时负责公司内部的基础桌面运维。"
                 </div>
             </div>

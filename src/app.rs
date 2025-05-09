@@ -1,10 +1,10 @@
 use leptos::prelude::*;
 use leptos_meta::*;
 use leptos_router::{
-    StaticSegment,
     components::{Route, Router, Routes},
+    StaticSegment,
 };
-use leptos_use::{UseColorModeOptions, UseColorModeReturn, use_color_mode_with_options};
+use leptos_use::{use_color_mode_with_options, UseColorModeOptions, UseColorModeReturn};
 use wasm_bindgen::prelude::*;
 
 use crate::{consts::COLOR_MODE, pages::home::Home};
