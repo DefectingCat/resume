@@ -2,6 +2,9 @@ export function name() {
     return "xfy";
 }
 
+/**
+ * Use html2canvas and jspdf to generate pdf
+ */
 export async function download() {
     return new Promise((resolve, reject) => {
         const script = document.createElement("script");
@@ -13,6 +16,7 @@ export async function download() {
                 reject("content not found");
             }
             const canvas = await html2canvas(content);
+            // document.body.append(canvas);
             const imgData = canvas.toDataURL("image/png");
             await generatePdf(canvas, imgData);
             script.remove();
@@ -23,6 +27,9 @@ export async function download() {
     });
 }
 
+/**
+ *  Use jspdf to generate canvas to pdf
+ */
 async function generatePdf(canvas, imgData) {
     return new Promise((resolve, reject) => {
         const script = document.createElement("script");

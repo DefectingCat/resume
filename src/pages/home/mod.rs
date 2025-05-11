@@ -18,7 +18,7 @@ pub fn Home() -> impl IntoView {
                     <PersonInfo />
                 </div>
                 // right 2/3 width on pc
-                <div class="w-full sm:w-2/3 px-8">
+                <div class="w-full sm:w-2/3 px-8 dark:bg-rua-gray-900">
                     <ProjectInfo />
                 </div>
             </div>
