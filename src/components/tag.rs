@@ -4,7 +4,7 @@ use leptos::prelude::*;
 #[component]
 pub fn Tag(children: Children) -> impl IntoView {
     view! {
-        <div class="border border-word-200 rounded-md px-1 py-[2px] text-xs mr-2 last:mr-0">
+        <div class="px-1 mr-2 text-xs rounded-md border last:mr-0 border-word-200 py-[2px]">
             {children()}
         </div>
     }

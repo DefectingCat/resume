@@ -16,7 +16,9 @@ release:
 fix:
 	leptosfmt . \
 		&& cargo fix --allow-dirty --all-features \
-		&& cargo fmt
+		&& cargo fmt \
+		&& cd src/ \
+		&& rustywind --write .
 
 clean:
 	cargo clean && rm -rf dist

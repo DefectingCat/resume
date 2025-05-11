@@ -17,7 +17,7 @@ pub fn Download() -> impl IntoView {
     view! {
         <button
             type="button"
-            class="inline-flex w-full justify-center gap-x-1.5 rounded-md dark:bg-rua-gray-800 dark:text-word-300 dark:ring-gray-600 dark:hover:bg-rua-gray-700 transition-all bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50 cursor-pointer items-center dark:disabled:bg-gray-800 disabled:bg-gray-100 disabled:cursor-not-allowed"
+            class="inline-flex gap-x-1.5 justify-center items-center py-2 px-3 w-full text-sm font-semibold text-gray-900 bg-white rounded-md ring-1 ring-inset ring-gray-300 transition-all cursor-pointer dark:ring-gray-600 hover:bg-gray-50 disabled:bg-gray-100 disabled:cursor-not-allowed shadow-xs dark:bg-rua-gray-800 dark:text-word-300 dark:hover:bg-rua-gray-700 dark:disabled:bg-gray-800"
             id="menu-button"
             aria-expanded="true"
             aria-haspopup="true"
