@@ -27,7 +27,9 @@ pub fn PersonInfo() -> impl IntoView {
                             d="M4 3a2 2 0 0 0-2 2v.201l6 3.231l6-3.23V5a2 2 0 0 0-2-2zm10 3.337L8.237 9.44a.5.5 0 0 1-.474 0L2 6.337V11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2z"
                         />
                     </svg>
-                    <a href="mailto:i@rua.plus">i@rua.plus</a>
+                    <a href="mailto:i@rua.plus" class="ml-2">
+                        i@rua.plus
+                    </a>
                 </div>
                 <div class="flex items-center mb-2">
                     <svg
@@ -41,7 +43,9 @@ pub fn PersonInfo() -> impl IntoView {
                             d="M10.25 2A3.25 3.25 0 0 0 7 5.25v21.5A3.25 3.25 0 0 0 10.25 30h11.5A3.25 3.25 0 0 0 25 26.75V5.25A3.25 3.25 0 0 0 21.75 2zM14 24h4a1 1 0 1 1 0 2h-4a1 1 0 1 1 0-2"
                         />
                     </svg>
-                    <a href="tel:19840170636">19840170636</a>
+                    <a href="tel:19840170636" class="ml-2">
+                        19840170636
+                    </a>
                 </div>
                 <div class="flex items-center mb-2">
                     <svg
@@ -57,7 +61,7 @@ pub fn PersonInfo() -> impl IntoView {
                             clip-rule="evenodd"
                         />
                     </svg>
-                    <a href="https://github.com/DefectingCat" target="_blank">
+                    <a href="https://github.com/DefectingCat" target="_blank" class="ml-2">
                         Sonetto
                     </a>
                 </div>
