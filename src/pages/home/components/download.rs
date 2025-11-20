@@ -10,8 +10,7 @@ pub fn Download() -> impl IntoView {
             .map_err(|e| logging::error!("download error: {e:?}"))
             .ok();
     }
-    let download_img_action: Action<(), (), SyncStorage> =
-        Action::new_unsync(|_: &()| download_img());
+    let download_img_action: Action<(), ()> = Action::new_unsync(|_: &()| download_img());
     let download_loading = download_img_action.pending();
 
     view! {
