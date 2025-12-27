@@ -14,7 +14,7 @@ pub fn DarkMode(class: Option<&'static str>) -> impl IntoView {
             <button
                 type="button"
                 class="inline-flex gap-x-1.5 justify-center py-2 px-3 w-full text-sm font-semibold text-gray-900 bg-white rounded-md ring-1 ring-inset ring-gray-300 transition-all cursor-pointer dark:ring-gray-600 hover:bg-gray-50 shadow-xs dark:bg-rua-gray-800 dark:text-word-300 dark:hover:bg-rua-gray-700"
-                on:click=move |_| set_show(!show.get())
+                on:click=move |_| {set_show.set(!show.get())}
                 id="menu-button"
                 aria-expanded="true"
                 aria-haspopup="true"
@@ -60,7 +60,7 @@ pub fn DarkMode(class: Option<&'static str>) -> impl IntoView {
                             move || mode.get() == ColorMode::Auto,
                         )
                         role="menuitem"
-                        on:click=move |_| set_mode(ColorMode::Auto)
+                        on:click=move |_| set_mode.set(ColorMode::Auto)
                         tabindex="-1"
                         id="menu-item-0"
                     >
@@ -78,7 +78,7 @@ pub fn DarkMode(class: Option<&'static str>) -> impl IntoView {
                             ],
                             move || mode.get() == ColorMode::Dark,
                         )
-                        on:click=move |_| set_mode(ColorMode::Dark)
+                        on:click=move |_| set_mode.set(ColorMode::Dark)
                         role="menuitem"
                         tabindex="-1"
                         id="menu-item-1"
@@ -97,7 +97,7 @@ pub fn DarkMode(class: Option<&'static str>) -> impl IntoView {
                             ],
                             move || mode.get() == ColorMode::Light,
                         )
-                        on:click=move |_| set_mode(ColorMode::Light)
+                        on:click=move |_| set_mode.set(ColorMode::Light)
                         role="menuitem"
                         tabindex="-1"
                         id="menu-item-2"

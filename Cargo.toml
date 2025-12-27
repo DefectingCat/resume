@@ -1,4 +1,4 @@
-cargo-features = ["profile-rustflags", "trim-paths"]
+# cargo-features = ["profile-rustflags", "trim-paths"]
 
 [package]
 name = "resume"
@@ -6,25 +6,25 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-leptos = { version = "0.8.12", features = ["csr", "nightly"] }
+leptos = { version = "0.8.15", features = ["csr"] }
 leptos_meta = "0.8.5"
-leptos_router = { version = "0.8.9", features = ["nightly"] }
-leptos-use = "0.16.3"
+leptos_router = { version = "0.8.11" }
+leptos-use = "0.17.0"
 console_log = "1"
-log = "0.4.25"
+log = "0.4.29"
 console_error_panic_hook = "0.1"
-wasm-bindgen = "0.2.100"
-wasm-bindgen-futures = "0.4.50"
+wasm-bindgen = "0.2.106"
+wasm-bindgen-futures = "0.4.56"
 
 [profile.dev]
-incremental = true          # Compile your binary in smaller steps.
-rustflags = ["-Zthreads=8"] # Better compile performance.
+incremental = true # Compile your binary in smaller steps.
+# rustflags = ["-Zthreads=8"] # Better compile performance.
 
 [profile.release]
-codegen-units = 1                                # Allows LLVM to perform better optimization.
-lto = true                                       # Enables link-time-optimizations.
-panic = "abort"                                  # Higher performance by disabling panic handlers.
-strip = true                                     # Ensures debug symbols are removed.
-trim-paths = "all"                               # Removes potentially privileged information from your binaries.
+codegen-units = 1 # Allows LLVM to perform better optimization.
+lto = true        # Enables link-time-optimizations.
+panic = "abort"   # Higher performance by disabling panic handlers.
+strip = true      # Ensures debug symbols are removed.
+# trim-paths = "all" # Removes potentially privileged information from your binaries.
 opt-level = "s"
-rustflags = ["-Cdebuginfo=0", "-Z", "threads=8"]
+# rustflags = ["-Cdebuginfo=0", "-Z", "threads=8"]
