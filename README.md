@@ -7,9 +7,10 @@ Online resume page built with Leptos. Support dark theme and generate PDF.
 - trunk
 - tailwindcss
 - rustywind
+- leptosfmt
 
 ## Tailwindcss cli
 
-Download cli https://github.com/tailwindlabs/tailwindcss/releases
+Download cli <https://github.com/tailwindlabs/tailwindcss/releases>
 
 Then change the specified version in `trunk.toml`

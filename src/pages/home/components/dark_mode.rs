@@ -14,7 +14,7 @@ pub fn DarkMode(class: Option<&'static str>) -> impl IntoView {
             <button
                 type="button"
                 class="inline-flex gap-x-1.5 justify-center py-2 px-3 w-full text-sm font-semibold text-gray-900 bg-white rounded-md ring-1 ring-inset ring-gray-300 transition-all cursor-pointer dark:ring-gray-600 hover:bg-gray-50 shadow-xs dark:bg-rua-gray-800 dark:text-word-300 dark:hover:bg-rua-gray-700"
-                on:click=move |_| {set_show.set(!show.get())}
+                on:click=move |_| { set_show.set(!show.get()) }
                 id="menu-button"
                 aria-expanded="true"
                 aria-haspopup="true"
